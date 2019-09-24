@@ -16,12 +16,16 @@ public class BIOClient {
         BufferedReader in = null;
         PrintWriter out = null;
         try {
-            socket = new Socket("127.0.0.1",port);
+            socket = new Socket("223.71.98.214",6006);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(),true);
-            out.println("QUERY TIME ORDER");
+//            out.println("$721,京ABY721,0,C01,,$");
+            out.println("");
             System.out.println("Send order 2 server succeed.");
-            String resp = in.readLine();
+            String resp;
+            while ((resp = in.readLine()) != null){
+                System.out.println(resp);
+            }
             System.out.println("现在是："+resp);
 
         } catch (IOException e) {
